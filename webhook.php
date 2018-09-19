@@ -38,8 +38,8 @@
     //     'notes': 'service_inquiry_form',
     // }
     ?>
-    <script>
+    <!-- <script>
         console.log('webhook is being hit');    
         console.log("<?php print_r($input); ?>");
         console.log('webhook should have printed the input');
-    </script>
+    </script> -->
