@@ -15,8 +15,8 @@
     var_dump($input);
     error_log(print_r($input['leadgen']->leadgen_id, true));
     error_log(print_r('-------------------------------', true));
-    // error_log(print_r($input[0]['value']->leadgen_id, true));
-    // error_log(print_r('-------------------------------', true));
+    error_log(print_r($input[0], true));
+    error_log(print_r('-------------------------------', true));
     // error_log(print_r($input[0]->value->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
     // error_log(print_r($input['value']->leadgen_id, true));
