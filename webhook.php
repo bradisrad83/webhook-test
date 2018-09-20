@@ -8,7 +8,7 @@
     }
 
     $input = json_decode(file_get_contents('php://input'), true);
-    error_log(print_r($input, true));
+    error_log(print_r($input));
     error_log(print_r('-------------------------------', true));
     error_log(print_r($input['value']['leadgen_id'], true));
     error_log(print_r('------------------------------------', true));
