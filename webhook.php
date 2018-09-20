@@ -12,9 +12,9 @@
     error_log(print_r('-------------------------------', true));
     error_log(print_r($input[0], true));
     error_log(print_r('-------------------------------', true));
-    error_log(print_r($input[0]->leadgen_id, true));
+    error_log(print_r($input->leadgen_id, true));
     error_log(print_r('-------------------------------', true));
-    error_log(print_r($input[0]['leadgen_id'], true));
+    error_log(print_r($input['leadgen_id'], true));
     error_log(print_r('-------------------------------', true));
 
 
