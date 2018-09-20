@@ -12,8 +12,22 @@
     error_log(print_r('-------------------------------', true));
     $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
     error_log(print_r($leadgen_id, true));
+
+        
+    //CURL CALL TO FACEBOOK GRAPH API WITH THE LEADGEN_ID FROM THE WEBHOOK
+    // $curl = curl_init();
+
+    // curl_setopt($curl, CURLOPT_URL,            "https://graph.facebook.com/v3.1/".$leadgen_id."/");
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1 );
+    // curl_setopt($curl, CURLOPT_POST,           1 );
+    // curl_setopt($curl, CURLOPT_POSTFIELDS, array("access_token: 268096574032221|9pjh-YlsC8q_Mq6WXujVMC75yvo")); 
+    // curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));  
+    // $leadgenResults=curl_exec($curl);
     
-    //  CURL CALL
+    
+    
+    
+    //  CURL CALL TO ACCULLYNX
     // $ch = curl_init();
 
     // curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
@@ -35,8 +49,3 @@
     //     'notes': 'service_inquiry_form',
     // }
     ?>
-    <script>
-        console.log('webhook is being hit');    
-        console.log("<?php print_r($input); ?>");
-        console.log('webhook should have printed the input');
-    </script>
