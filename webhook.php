@@ -10,15 +10,15 @@
     $input = json_decode(file_get_contents('php://input'), true);
     error_log(print_r($input, true));
     error_log(print_r('-------------------------------', true));
-    error_log(print_r($input->value->leadgen_id, true));
+    error_log(print_r($input['value']->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
-    // error_log(print_r($input[0]->leadgen_id, true));
+    error_log(print_r($input[0]['value']->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
-    // error_log(print_r($input[0]['leadgen_id'], true));
+    error_log(print_r($input[0]->value->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
-    // error_log(print_r($input->leadgen_id, true));
+    // error_log(print_r($input['value']->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
-    // error_log(print_r($input['leadgen_id'], true));
+    // error_log(print_r($input['value']->leadgen_id, true));
     // error_log(print_r('-------------------------------', true));
 
 
