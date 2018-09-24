@@ -1,17 +1,17 @@
 <?php
 
-    $challenge = $_REQUEST['hub_challenge'];
-    $verify_token = $_REQUEST['hub_verify_token'];
+    // $challenge = $_REQUEST['hub_challenge'];
+    // $verify_token = $_REQUEST['hub_verify_token'];
 
-    if ($verify_token === 'abcd1234') {
-        echo $challenge;
-    }
+    // if ($verify_token === 'abcd1234') {
+    //     echo $challenge;
+    // }
 
-    $input = json_decode(file_get_contents('php://input'), true);
-    error_log(print_r($input, true));
-    error_log(print_r('-------------------------------', true));
-    $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
-    error_log(print_r($leadgen_id, true));
+    // $input = json_decode(file_get_contents('php://input'), true);
+    // error_log(print_r($input, true));
+    // error_log(print_r('-------------------------------', true));
+    // $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
+    // error_log(print_r($leadgen_id, true));
 
         
     //CURL CALL TO FACEBOOK GRAPH API WITH THE LEADGEN_ID FROM THE WEBHOOK
@@ -34,7 +34,7 @@
     // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
     // curl_setopt($ch, CURLOPT_POST,           1 );
     // curl_setopt($ch, CURLOPT_POSTFIELDS,     "body goes here" ); 
-    // curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization': 'Bearer <ACCESS_TOKEN>', 'Content-Type: application/json'));  
+    // curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization': 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh', 'Content-Type: application/json'));  
     // $result=curl_exec($ch);
     // curl_close($ch);
   
