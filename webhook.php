@@ -4,12 +4,11 @@
     $verify_token = $_REQUEST['hub_verify_token'];
 
     if ($verify_token === 'abcd1234') {
-        // echo $challenge;
-        echo '1445840444';
+        echo $challenge;
     }
 
-    // $input = json_decode(file_get_contents('php://input'), true);
-    // error_log(print_r($input, true));
+    $input = json_decode(file_get_contents('php://input'), true);
+    error_log(print_r($input, true));
     // error_log(print_r('-------------------------------', true));
     // $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
     // error_log(print_r($leadgen_id, true));
