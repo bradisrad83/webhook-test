@@ -4,7 +4,8 @@
     $verify_token = $_REQUEST['hub_verify_token'];
 
     if ($verify_token === 'abcd1234') {
-        echo $challenge;
+        // echo $challenge;
+        echo '1445840444';
     }
 
     // $input = json_decode(file_get_contents('php://input'), true);
