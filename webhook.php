@@ -9,7 +9,7 @@
 
     $input = json_decode(file_get_contents('php://input'), true);
     error_log(print_r($input, true));
-    error_log(print_r('-------------------------------', true));
+    error_log(print_r('Below is the leadgen_id that I will need to use to call the facebook graph API using this and my Page Acess Token ', true));
     $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
     error_log(print_r($leadgen_id, true));
 
@@ -24,14 +24,15 @@
     curl_setopt($curl, CURLOPT_POSTFIELDS, array("access_token: EAADz1RkPiV0BAPNDuT9fkh2fVbL1u0LrQfJC7n2IX60Y5bjGmNqXvTwrEcsnPwgM1SsFmaH41ZBy6pCWAL7zhCV3ZBAzFZBZAQgU21d5a3tun08RslPSQMdjskZAotZAmFEzsIfwY0II2oYCN57qxEwJARTCAcPujlhIfeDcps8X2Mhj0HntZArFRAZCp733ep989vVZBxOjQYwZDZD")); 
     curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));  
     $leadgenResults=curl_exec($curl);
-    error_log(print_r('-------------------------------', true));
+    error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
 
     
     
     
     
-    //  CURL CALL TO ACCULLYNX
+    //  CURL CALL TO ACCULLYNX to Store my lead data into my clients CRM
+    //  I AM NOT 100% SURE HOW THE GRAPH DATA WILL RETURN THIS DATA BUT THE "body goes here" portions will be a raw json object of the previous calls return data.
     // $ch = curl_init();
 
     // curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
