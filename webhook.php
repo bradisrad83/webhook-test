@@ -43,7 +43,7 @@
   
    
    
-    //  most likeley the body of the form
+    //  most likeley the body of the form and they should be the body of the previous curl call if I have permissions:
     // {
     //     'firstName': 'form_full_name',
     //     'emailAddress': 'form_email_address',
@@ -51,30 +51,4 @@
     //     'street': 'form_address',
     //     'notes': 'service_inquiry_form',
     // }
-//     add_action('wpcf7_before_send_mail', 'acculynx_cf7');
-
-// function acculynx_cf7($WPCF7_ContactForm) {
-// 	$submission = WPCF7_Submission::get_instance();
-// 	if ( $submission ) {
-// 		$posted_data = $submission->get_posted_data();
-// 	}
-
-// 	wp_remote_request('https://api.acculynx.com/api/v1/leads', array(
-// 			'method' 			=> 'POST',
-// 			'timeout'			=> 45,
-// 			'headers'			=> array('Authrization' => 'Bearer Y2FkNzQ0ZGEtMjBmOC00YzJkLWExMzMtOGU5YTkxNGFhNTZmMGZkYzUyOTYtZWI5Zi00NDk4LWJkYWQtZDJmN2Q4MzEzZjU4',
-// 										 'Accept'		=> 'application/json'
-// 										),
-// 			'body'				=> array( json_encode([
-// 														"firstName" 	=> sanitize_text_field($posted_data['your-name']),
-// 														"emailAddress"	=> sanitize_text_field($posted_data['your-email']),
-// 														"phoneNumber1"	=> sanitize_text_field($posted_data['your-phone-number']),
-// 														"street"		=> sanitize_text_field($posted_data['your-address']),
-// 														"notes"			=> sanitize_text_field($posted_data['service_inquiry'])
-// 													  ]) 
-										
-// 										),
-// 		)
-// 	);
-// }
     ?>
