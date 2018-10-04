@@ -17,6 +17,7 @@
      $tokenTest=curl_exec($curl);
 
      error_log(print_r($tokenTest, true));
+     error_log(print_r('---------------------------------------------------------------------'));
    
    
    
