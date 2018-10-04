@@ -9,10 +9,10 @@
 
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL,            "https://graph.facebook.com/oauth/access_token" );
+    curl_setopt($ch, CURLOPT_URL,            "https://graph.facebook.com/oauth/access_token?client_id=268096574032221&client_secret=273603e7fba3283b9d8b2a58ebb6f77a&redirect_uri=https://321theagency.com/&grant_type=client_credentials");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-    curl_setopt($ch, CURLOPT_POST,           1 );
-    curl_setopt($ch, CURLOPT_POSTFIELDS,     array("'client_id': '268096574032221', 'client_sercet': '273603e7fba3283b9d8b2a58ebb6f77a', 'redirect_uri': 'https://murmuring-gorge-25938.herokuapp.com/', 'grant_type': 'client_credentials'") ); 
+    curl_setopt($ch, CURLOPT_HTTPGET,           1 );
+    // curl_setopt($ch, CURLOPT_POSTFIELDS,     array("'client_id': '268096574032221', 'client_sercet': '273603e7fba3283b9d8b2a58ebb6f77a', 'redirect_uri': 'https://murmuring-gorge-25938.herokuapp.com/', 'grant_type': 'client_credentials'") ); 
     curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
      $tokenTest=curl_exec($ch);
 
