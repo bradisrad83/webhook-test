@@ -15,20 +15,33 @@
     curl_setopt($ch1, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
      $accessToken=curl_exec($ch1);
 
-     error_log(print_r($accessToken->access_token, true));
+     error_log(print_r($accessToken, true));
      error_log(print_r('---------------------------------------------------------------------', true));
 
-    //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
-    $pageId = '563763967129243';
+
+
+    //CURL CALL TO GET ACCESS TOKEN
     $ch2 = curl_init();
-    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken->access_token);
+    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/563763967129243?key=value&access_token=268096574032221|273603e7fba3283b9d8b2a58ebb6f77a");
     curl_setopt($ch2, CURLOPT_RETURNTRANSFER,    1 );
     curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
     curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
-    $pageAccessToken=curl_exec($ch2);
+     $test=curl_exec($ch2);
 
-    error_log(print_r($pageAccessToken, true));
-    error_log(print_r('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||', true));
+     error_log(print_r($test, true));
+     error_log(print_r('{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}', true));
+
+    // //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
+    // $pageId = '563763967129243';
+    // $ch2 = curl_init();
+    // curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken->access_token);
+    // curl_setopt($ch2, CURLOPT_RETURNTRANSFER,    1 );
+    // curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
+    // curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
+    // $pageAccessToken=curl_exec($ch2);
+
+    // error_log(print_r($pageAccessToken, true));
+    // error_log(print_r('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||', true));
    
    
    
