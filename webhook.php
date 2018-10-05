@@ -26,6 +26,8 @@
     $leadgenResults=curl_exec($curl);
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
+    error_log(print_r('--------------------------------------------------------------------------------------'));
+
 
     // $token = 'EAADz1RkPiV0BAHBmLu9RuUWVUzjYnZC715xcoD7vZCwRTu8yIWIQoHPZBksBZCRcj2c1NBkR31Ap1DO8ZC0SgKAiXlWPWiEZChAPNRhXai2bSbgpUd7aIfi6yxI2hSuBCCpHxPz9rcZA0T2uJWU60TmFyoEXhiTZC4yS1Pm4taSkDwZDZD';
     
