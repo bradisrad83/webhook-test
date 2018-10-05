@@ -7,24 +7,26 @@
         echo $challenge;
     }
 
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL,            "https://graph.facebook.com/oauth/access_token?client_id=268096574032221&client_secret=273603e7fba3283b9d8b2a58ebb6f77a&redirect_uri=https://321theagency.com/&grant_type=client_credentials");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-    curl_setopt($ch, CURLOPT_HTTPGET,           1 );
+    //CURL CALL TO GET ACCESS TOKEN
+    $ch1 = curl_init();
+    curl_setopt($ch1, CURLOPT_URL,            "https://graph.facebook.com/oauth/access_token?client_id=268096574032221&client_secret=273603e7fba3283b9d8b2a58ebb6f77a&redirect_uri=https://321theagency.com/&grant_type=client_credentials");
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1 );
+    curl_setopt($ch1, CURLOPT_HTTPGET,           1 );
     // curl_setopt($ch, CURLOPT_POSTFIELDS,     array("'client_id': '268096574032221', 'client_sercet': '273603e7fba3283b9d8b2a58ebb6f77a', 'redirect_uri': 'https://murmuring-gorge-25938.herokuapp.com/', 'grant_type': 'client_credentials'") ); 
-    curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
-     $tokenTest=curl_exec($ch);
+    curl_setopt($ch1, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
+     $accessToken=curl_exec($ch1);
 
-     error_log(print_r($tokenTest, true));
+     error_log(print_r($accessToken, true));
      error_log(print_r('---------------------------------------------------------------------', true));
-   
-   
-   
-   
-   
-   
-   
+
+    //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
+    $pageId = '563763967129243';
+    $ch2 = curl_init();
+    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken);
+    curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1 );
+    curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
+    curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
+    $pageAccessToken=curl_exec($ch2);
    
    
    
