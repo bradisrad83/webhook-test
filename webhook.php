@@ -13,14 +13,15 @@
     curl_setopt($ch1, CURLOPT_RETURNTRANSFER,    1 );
     curl_setopt($ch1, CURLOPT_HTTPGET,           1 );
     curl_setopt($ch1, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
-     $accessToken=json_decode(curl_exec($ch1));
+    $accessToken=curl_exec($ch1);
+    $jsonAccessToken = json_decode($accessToken);
 
-     error_log(print_r(json_decode($accessToken), true));
+     error_log(print_r($accessToken, true));
      error_log(print_r('---------------------------------------------------------------------', true));
-     error_log(print_r($accessToken['access_token'], true));
-     error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-     error_log(print_r($accessToken['token_type'], true));
-     error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
+    //  error_log(print_r($accessToken['access_token'], true));
+    //  error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
+    //  error_log(print_r($accessToken['token_type'], true));
+    //  error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
 
 
 
