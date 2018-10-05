@@ -22,7 +22,7 @@
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,   1 );
     curl_setopt($curl, CURLOPT_HTTPGET,          1 );
     // curl_setopt($curl, CURLOPT_POSTFIELDS, array("access_token: EAADz1RkPiV0BAHBmLu9RuUWVUzjYnZC715xcoD7vZCwRTu8yIWIQoHPZBksBZCRcj2c1NBkR31Ap1DO8ZC0SgKAiXlWPWiEZChAPNRhXai2bSbgpUd7aIfi6yxI2hSuBCCpHxPz9rcZA0T2uJWU60TmFyoEXhiTZC4yS1Pm4taSkDwZDZD")); 
-    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BAHBmLu9RuUWVUzjYnZC715xcoD7vZCwRTu8yIWIQoHPZBksBZCRcj2c1NBkR31Ap1DO8ZC0SgKAiXlWPWiEZChAPNRhXai2bSbgpUd7aIfi6yxI2hSuBCCpHxPz9rcZA0T2uJWU60TmFyoEXhiTZC4yS1Pm4taSkDwZDZD')); 
+    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BABNksvsAG8wWUdTrXKTtN4iSAhsNlMGVTXbv9EbzrsJEyZCdB26DSv0dJdU6ottzSGURJoyaOEtoENROMk36ZAbbvJMyH5XPeQOWVCZBuf0BatXS7nM3uqb7qnGKYFEaxpQU93YwCUApkqu9YJaDBkGgjgqcwZDZD')); 
     $leadgenResults=curl_exec($curl);
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
@@ -30,6 +30,8 @@
 
 
     // $token = 'EAADz1RkPiV0BAHBmLu9RuUWVUzjYnZC715xcoD7vZCwRTu8yIWIQoHPZBksBZCRcj2c1NBkR31Ap1DO8ZC0SgKAiXlWPWiEZChAPNRhXai2bSbgpUd7aIfi6yxI2hSuBCCpHxPz9rcZA0T2uJWU60TmFyoEXhiTZC4yS1Pm4taSkDwZDZD';
+    
+    // $token = 'EAADz1RkPiV0BABNksvsAG8wWUdTrXKTtN4iSAhsNlMGVTXbv9EbzrsJEyZCdB26DSv0dJdU6ottzSGURJoyaOEtoENROMk36ZAbbvJMyH5XPeQOWVCZBuf0BatXS7nM3uqb7qnGKYFEaxpQU93YwCUApkqu9YJaDBkGgjgqcwZDZD';
     
     
 
