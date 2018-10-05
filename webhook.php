@@ -7,8 +7,8 @@
         echo $challenge;
     }
 
-    // $input = json_decode(file_get_contents('php://input'), true);
-    // error_log(print_r($input, true));
+    $input = json_decode(file_get_contents('php://input'), true);
+    error_log(print_r($input, true));
     // error_log(print_r('Below is the leadgen_id that I will need to use to call the facebook graph API using this and my Page Acess Token ', true));
     // $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
     // error_log(print_r($leadgen_id, true));
