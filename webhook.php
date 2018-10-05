@@ -15,7 +15,7 @@
     curl_setopt($ch1, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
      $accessToken=curl_exec($ch1);
 
-     error_log(print_r($accessToken, true));
+     error_log(print_r(json_decode($accessToken), true));
      error_log(print_r('---------------------------------------------------------------------', true));
      error_log(print_r($accessToken['access_token'], true));
      error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
