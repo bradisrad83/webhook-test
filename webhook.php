@@ -18,10 +18,10 @@
 
      error_log(print_r($jsonAccessToken, true));
      error_log(print_r('---------------------------------------------------------------------', true));
-    //  error_log(print_r($accessToken['access_token'], true));
-    //  error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-    //  error_log(print_r($accessToken['token_type'], true));
-    //  error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
+     error_log(print_r($accessToken['access_token'], true));
+     error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
+     error_log(print_r($accessToken['token_type'], true));
+     error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
 
 
 
