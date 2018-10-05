@@ -20,9 +20,9 @@
     error_log(print_r('---------------------------------------------------------------------', true)); 
     error_log(print_r($jsonAccessToken, true));
     error_log(print_r('---------------------------------------------------------------------', true));
-    error_log(print_r($accessToken[0], true));
+    error_log(print_r($jsonAccessToken[0], true));
     error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-    error_log(print_r($accessToken[1], true));
+    error_log(print_r($jsonAccessToken[1], true));
     error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
 
 
