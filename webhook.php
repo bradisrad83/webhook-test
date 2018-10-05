@@ -22,8 +22,21 @@
     error_log(print_r('---------------------------------------------------------------------', true));
     error_log(print_r($jsonAccessToken->access_token, true));
     error_log(print_r('[][][][][][[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-    error_log(print_r($jsonAccessToken['token_type'],  true));
+    error_log(print_r($jsonAccessToken->token_type,  true));
     error_log(print_r('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', true));
+
+
+    //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
+    $pageId = '563763967129243';
+    $ch2 = curl_init();
+    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$jsonAccessToken->access_token);
+    curl_setopt($ch2, CURLOPT_RETURNTRANSFER,    1 );
+    curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
+    curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
+    $pageAccessToken=curl_exec($ch2);
+
+    error_log(print_r($pageAccessToken, true));
+    error_log(print_r('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||', true));
 
 
 
@@ -55,17 +68,6 @@
     //  error_log(print_r($test, true));
     //  error_log(print_r('{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}', true));
 
-    // //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
-    // $pageId = '563763967129243';
-    // $ch2 = curl_init();
-    // curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken->access_token);
-    // curl_setopt($ch2, CURLOPT_RETURNTRANSFER,    1 );
-    // curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
-    // curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
-    // $pageAccessToken=curl_exec($ch2);
-
-    // error_log(print_r($pageAccessToken, true));
-    // error_log(print_r('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||', true));
    
    
    
