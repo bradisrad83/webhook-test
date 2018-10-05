@@ -13,7 +13,7 @@
     curl_setopt($ch1, CURLOPT_RETURNTRANSFER,    1 );
     curl_setopt($ch1, CURLOPT_HTTPGET,           1 );
     curl_setopt($ch1, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
-     $accessToken=curl_exec($ch1);
+     $accessToken=json_decode(curl_exec($ch1));
 
      error_log(print_r(json_decode($accessToken), true));
      error_log(print_r('---------------------------------------------------------------------', true));
