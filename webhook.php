@@ -21,7 +21,7 @@
     //CURL CALL TO GET PAGE ACCESS TOKEN USING PREVIOUS ACCESS TOKEN
     $pageId = '563763967129243';
     $ch2 = curl_init();
-    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken);
+    curl_setopt($ch2, CURLOPT_URL,            "https://graph.facebook.com/".$pageId."?fields=".$accessToken->access_token);
     curl_setopt($ch2, CURLOPT_RETURNTRANSFER,    1 );
     curl_setopt($ch2, CURLOPT_HTTPGET,           1 );
     curl_setopt($ch2, CURLOPT_HTTPHEADER,     array('Content-Type: text/plain')); 
