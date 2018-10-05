@@ -13,6 +13,20 @@
     $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'];
     error_log(print_r($leadgen_id, true));
 
+
+    //CURL CALL TO FACEBOOK GRAPH API WITH THE LEADGEN_ID FROM THE WEBHOOK
+    //PLEASE NOTE FOR NOW I AM HARD CODING AN ACCESS TOKEN IN THAT I GOT FROM THE GRAPH EXPLORER API JUST SO I MAY TEST THIS CALL
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL,            "https://graph.facebook.com/v3.1/".$leadgen_id."/");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER,   1 );
+    curl_setopt($curl, CURLOPT_POST,             1 );
+    curl_setopt($curl, CURLOPT_POSTFIELDS, array("access_token: EAADz1RkPiV0BAHBmLu9RuUWVUzjYnZC715xcoD7vZCwRTu8yIWIQoHPZBksBZCRcj2c1NBkR31Ap1DO8ZC0SgKAiXlWPWiEZChAPNRhXai2bSbgpUd7aIfi6yxI2hSuBCCpHxPz9rcZA0T2uJWU60TmFyoEXhiTZC4yS1Pm4taSkDwZDZD")); 
+    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json')); 
+    $leadgenResults=curl_exec($curl);
+    error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
+    error_log(print_r($leadgenResults, true));
+
     // //CURL CALL TO GET ACCESS TOKEN
     // $ch1 = curl_init();
     // curl_setopt($ch1, CURLOPT_URL,            "https://graph.facebook.com/oauth/access_token?client_id=268096574032221&client_secret=273603e7fba3283b9d8b2a58ebb6f77a&redirect_uri=https://321theagency.com/&grant_type=client_credentials");
@@ -76,18 +90,7 @@
     //  error_log(print_r('{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}', true));
 
         
-    //CURL CALL TO FACEBOOK GRAPH API WITH THE LEADGEN_ID FROM THE WEBHOOK
-    //PLEASE NOTE FOR NOW I AM HARD CODING AN ACCESS TOKEN IN THAT I GOT FROM THE GRAPH EXPLORER API JUST SO I MAY TEST THIS CALL
-    // $curl = curl_init();
 
-    // curl_setopt($curl, CURLOPT_URL,            "https://graph.facebook.com/v3.1/".$leadgen_id."/");
-    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1 );
-    // curl_setopt($ch, CURLOPT_POST,             1 );
-    // curl_setopt($curl, CURLOPT_POSTFIELDS, array("access_token: EAADz1RkPiV0BAMZCjc1AaC4OkpXkGjyDE9FJlmT88Q6ithc1bU3L5GU1un3UNEYr4rICrbXfZC2ZAb86UECjOAy8ZBjzgZCZAbSeBjumujZA8YRXYem223ZC53SIj5BlzuODW0FkKLRurrhZBjuMbvlV7cfzRb3OKIRKO0K8xmSfbTua5uEjsr6e8OeIYpwodHpdZCsrW65IOvTQZDZD")); 
-    // curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json')); 
-    // $leadgenResults=curl_exec($curl);
-    // error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
-    // error_log(print_r($leadgenResults, true));
     
 
     
