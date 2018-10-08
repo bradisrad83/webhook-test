@@ -28,20 +28,27 @@
     error_log(print_r($leadgenResults, true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     $leadData = $leadgenResults->field_data;
-    error_log(print_r($leadData, true));
-    error_log(print_r('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', true));
-    error_log(print_r($leadData[0]->values[0], true));
-    error_log(print_r('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', true));
-    error_log(print_r($leadData[1]->values[0], true));
-    error_log(print_r('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', true));
-    error_log(print_r($leadData[2]->values[0], true));
-    error_log(print_r('33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333', true));
-    error_log(print_r($leadData[3]->values[0], true));
-    error_log(print_r('44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444', true));
-    error_log(print_r($leadData[4]->values[0], true));
-    error_log(print_r('55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555', true));
-    error_log(print_r($leadData[5]->values[0], true));
-    error_log(print_r('--------------------------------------------------------------------------------------', true));
+    // error_log(print_r($leadData, true));
+    // error_log(print_r('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', true));
+    // error_log(print_r($leadData[0]->values[0], true));
+    // error_log(print_r('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', true));
+    // error_log(print_r($leadData[1]->values[0], true));
+    // error_log(print_r('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', true));
+    // error_log(print_r($leadData[2]->values[0], true));
+    // error_log(print_r('33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333', true));
+    // error_log(print_r($leadData[3]->values[0], true));
+    // error_log(print_r('44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444', true));
+    // error_log(print_r($leadData[4]->values[0], true));
+    // error_log(print_r('55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555', true));
+    // error_log(print_r($leadData[5]->values[0], true));
+    // error_log(print_r('--------------------------------------------------------------------------------------', true));
+
+    $notes = $leadData[0]->values[0];
+    $email = $leadData[0]->values[1];
+    $name = $leadData[0]->values[2];
+    $phone = $leadData[0]->values[3];
+    $address = $leadData[0]->values[4];
+    $zip = $leadData[0]->values[5];
 
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
@@ -50,15 +57,23 @@
 
     //  CURL CALL TO ACCULLYNX to Store my lead data into my clients CRM
     //  I AM NOT 100% SURE HOW THE GRAPH DATA WILL RETURN THIS DATA BUT THE "body goes here" portions will be a raw json object of the previous calls return data.
-    // $ch = curl_init();
+    $ch = curl_init();
 
-    // curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-    // curl_setopt($ch, CURLOPT_POST,           1 );
-    // curl_setopt($ch, CURLOPT_POSTFIELDS,     "body goes here" ); 
-    // curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization': 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh', 'Content-Type: application/json'));  
-    // $result=curl_exec($ch);
-    // curl_close($ch);
+    curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+    curl_setopt($ch, CURLOPT_POST,           1 );
+    curl_setopt($ch, CURLOPT_POSTFIELDS,      "{
+                                                'firstName':.".$name.",
+                                                'phoneNumber1':.".$phone.",
+                                                'street':.".$address.",
+                                                'zip':.".$zip.",
+                                                'emailAddres':.".$email.",
+                                                'notes':.".$notes."
+                                              }"); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization' => 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh', 'Content-Type: application/json'));  
+    $results=curl_exec($ch);
+    error_log(print_r('Below should be a response of 200 and Ill have to check acculynx to see if it went through', true));
+    error_log(print_r($results, true));
   
    
    
