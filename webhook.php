@@ -25,7 +25,7 @@
     $leadgenResults=curl_exec($curl);
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
-    error_log(print_r('--------------------------------------------------------------------------------------'));
+    error_log(print_r('--------------------------------------------------------------------------------------', true));
 
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
