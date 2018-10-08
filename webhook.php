@@ -30,7 +30,7 @@
     $leadData = $leadgenResults->field_data;
     error_log(print_r($leadData, true));
     error_log(print_r('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', true));
-    error_log(print_r($leadData[0]->values, true));
+    error_log(print_r($leadData[0]->values[0], true));
     error_log(print_r('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', true));
     error_log(print_r($leadData[1], true));
     error_log(print_r('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', true));
