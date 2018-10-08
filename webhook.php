@@ -58,10 +58,10 @@
         'emailAddress'  => $email,
         'notes'         => $notes
     ]);
-    $headerForAcculynx = [
+    $headerForAcculynx = json_encode([
         'Authorization' => 'Bearer Y2FkNzQ0ZGEtMjBmOC00YzJkLWExMzMtOGU5YTkxNGFhNTZmMGZkYzUyOTYtZWI5Zi00NDk4LWJkYWQtZDJmN2Q4MzEzZjU4',
         'Content-Type'  => 'application/json'
-    ];
+    ]);
 
 
 
@@ -78,10 +78,11 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
     curl_setopt($ch, CURLOPT_POST,           1 );
     curl_setopt($ch, CURLOPT_POSTFIELDS,     $jsonArrayForAcculynx); 
-    curl_setopt($ch, CURLOPT_HTTPHEADER,     array(
-                                        'Authorization' => 'Bearer Y2FkNzQ0ZGEtMjBmOC00YzJkLWExMzMtOGU5YTkxNGFhNTZmMGZkYzUyOTYtZWI5Zi00NDk4LWJkYWQtZDJmN2Q4MzEzZjU4',
-                                        'Content-Type'  => 'application/json'
-    ));  
+    // curl_setopt($ch, CURLOPT_HTTPHEADER,     array(
+    //                                     'Authorization' => 'Bearer Y2FkNzQ0ZGEtMjBmOC00YzJkLWExMzMtOGU5YTkxNGFhNTZmMGZkYzUyOTYtZWI5Zi00NDk4LWJkYWQtZDJmN2Q4MzEzZjU4',
+    //                                     'Content-Type'  => 'application/json'
+    // ));  
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headerForAcculynx);
     $results=curl_exec($ch);
     error_log(print_r('Below should be a response of 200 and Ill have to check acculynx to see if it went through', true));
     error_log(print_r($results, true));
