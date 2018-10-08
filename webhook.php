@@ -77,7 +77,7 @@
     curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization' => 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh', 'Content-Type: application/json'));  
     $results=curl_exec($ch);
     error_log(print_r('Below should be a response of 200 and Ill have to check acculynx to see if it went through', true));
-    error_log(print_r($jsonArrayForAcculynx, true));
+    error_log(print_r($results, true));
   
    
    
