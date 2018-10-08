@@ -27,10 +27,10 @@
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
-    error_log(print_r($leadgenResults->field_data, true));
+    // error_log(print_r($leadgenResults->field_data, true));
 
-    $leadData = $leadgenResults->field_data;
-    $values = get_object_vars($leadData);
+    // $leadData = $leadgenResults->field_data;
+    $values = get_object_vars($leadgenResults);
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
