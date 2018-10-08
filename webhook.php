@@ -30,12 +30,7 @@
     // error_log(print_r($leadgenResults->field_data, true));
 
     $leadData = $leadgenResults->field_data;
-    $values = get_object_vars($leadData);
-    error_log(print_r('--------------------------------------------------------------------------------------', true));
-    error_log(print_r('--------------------------------------------------------------------------------------', true));
-    error_log(print_r('--------------------------------------------------------------------------------------', true));
-    error_log(print_r($values, true));
-    error_log(print_r('--------------------------------------------------------------------------------------', true));
+    error_log(print_r($leadData, true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
