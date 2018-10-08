@@ -29,8 +29,8 @@
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     // error_log(print_r($leadgenResults->field_data, true));
 
-    // $leadData = $leadgenResults->field_data;
-    $values = get_object_vars($leadgenResults);
+    $leadData = $leadgenResults->field_data;
+    $values = get_object_vars($leadData);
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
