@@ -50,6 +50,15 @@
     $address = $leadData[0]->values[4];
     $zip = $leadData[0]->values[5];
 
+    $jsonArrayForAcculynx = json_encode([
+        'firstName'     => $firstName,
+        'phoneNumber1'  => $phone,
+        'street'        => $address,
+        'zip'           => $zip,
+        'emailAddress'  => $email,
+        'notes'         => $notes
+    ]);
+
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
     // $token = 'EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD';
@@ -62,19 +71,11 @@
     curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
     curl_setopt($ch, CURLOPT_POST,           1 );
-    curl_setopt($ch, CURLOPT_POSTFIELDS,    json_encode([
-                                                'firstName'     => $firstName,
-                                                'phoneNumber1'  => $phone,
-                                                'street'        => $address,
-                                                'zip'           => $zip,
-                                                'emailAddress'  => $email,
-                                                'notes'         => $notes
-                                            ]) 
-    ); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS,     $jsonArrayForAcculynx); 
     curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization' => 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh', 'Content-Type: application/json'));  
     $results=curl_exec($ch);
     error_log(print_r('Below should be a response of 200 and Ill have to check acculynx to see if it went through', true));
-    error_log(print_r($results, true));
+    error_log(print_r($jsonArrayForAcculynx, true));
   
    
    
