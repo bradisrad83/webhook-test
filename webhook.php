@@ -27,11 +27,22 @@
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
-    // error_log(print_r($leadgenResults->field_data, true));
-
     $leadData = $leadgenResults->field_data;
     error_log(print_r($leadData, true));
+    error_log(print_r('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', true));
+    error_log(print_r($leadData[0], true));
+    error_log(print_r('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', true));
+    error_log(print_r($leadData[1], true));
+    error_log(print_r('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', true));
+    error_log(print_r($leadData[2], true));
+    error_log(print_r('33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333', true));
+    error_log(print_r($leadData[3], true));
+    error_log(print_r('44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444', true));
+    error_log(print_r($leadData[4], true));
+    error_log(print_r('55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555', true));
+    error_log(print_r($leadData[5], true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
+
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
     // $token = 'EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD';
