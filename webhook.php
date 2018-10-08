@@ -30,17 +30,17 @@
     $leadData = $leadgenResults->field_data;
     error_log(print_r($leadData, true));
     error_log(print_r('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', true));
-    error_log(print_r($leadData[0]['values'][0], true));
+    error_log(print_r($leadData[0]->values, true));
     error_log(print_r('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', true));
-    error_log(print_r($leadData[1]['values'][0], true));
+    error_log(print_r($leadData[1], true));
     error_log(print_r('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', true));
-    error_log(print_r($leadData[2]['values'][0], true));
+    error_log(print_r($leadData[2], true));
     error_log(print_r('33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333', true));
-    error_log(print_r($leadData[3]['values'][0], true));
+    error_log(print_r($leadData[3], true));
     error_log(print_r('44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444', true));
-    error_log(print_r($leadData[4]['values'][0], true));
+    error_log(print_r($leadData[4], true));
     error_log(print_r('55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555', true));
-    error_log(print_r($leadData[5]['values'][0], true));
+    error_log(print_r($leadData[5], true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
 
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
