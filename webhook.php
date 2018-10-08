@@ -58,10 +58,10 @@
         'emailAddress'  => $email,
         'notes'         => $notes
     ]);
-    $headerForAcculynx = json_encode([
+    $headerForAcculynx = [
         'Authorization' => 'Bearer N2QyMDFjZGYtNmE5ZS00MDE5LWFjNTgtZWQ5ODljZTU3Y2E1ODJiMzQzMzctZDQ0ZC00MTZkLWI5MDAtNjVlNDZlN2U1MDRh',
         'Content-Type'  => 'application/json'
-    ]);
+    ];
 
 
 
