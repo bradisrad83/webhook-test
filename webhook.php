@@ -51,7 +51,7 @@
     $zip = $leadData[5]->values[0];
 
     $jsonArrayForAcculynx = json_encode([
-        'firstName'     => $firstName,
+        'firstName'     => $name,
         'phoneNumber1'  => $phone,
         'street'        => $address,
         'zip'           => $zip,
