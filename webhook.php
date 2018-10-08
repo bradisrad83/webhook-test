@@ -22,8 +22,7 @@
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,   1 );
     curl_setopt($curl, CURLOPT_HTTPGET,          1 );
     curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD')); 
-    $leadgenResults=curl_exec($curl);
-    $leadgenResults = json_decode($leadgenResults);
+    $leadgenResults=json_decod(curl_exec($curl));
     error_log(print_r('this should be the results from the facebook graph API call but I do not currently have permissions (lead_retrieval)', true));
     error_log(print_r($leadgenResults, true));
     error_log(print_r('--------------------------------------------------------------------------------------', true));
