@@ -44,21 +44,21 @@
     // error_log(print_r('--------------------------------------------------------------------------------------', true));
 
     $notes = $leadData[0]->values[0];
-    $email = $leadData[0]->values[1];
-    $name = $leadData[0]->values[2];
-    $phone = $leadData[0]->values[3];
-    $address = $leadData[0]->values[4];
-    $zip = $leadData[0]->values[5];
+    $email = $leadData[1]->values[0];
+    $name = $leadData[2]->values[0];
+    $phone = $leadData[3]->values[0];
+    $address = $leadData[4]->values[0];
+    $zip = $leadData[5]->values[0];
 
-    $jsonArrayForAcculynx = array(
+    $jsonArrayForAcculynx = json_encode([
         'firstName'     => $firstName,
         'phoneNumber1'  => $phone,
         'street'        => $address,
         'zip'           => $zip,
         'emailAddress'  => $email,
         'notes'         => $notes
-    );
-    
+    ]);
+
 
 
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
