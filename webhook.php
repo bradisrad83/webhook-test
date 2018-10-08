@@ -50,14 +50,16 @@
     $address = $leadData[0]->values[4];
     $zip = $leadData[0]->values[5];
 
-    $jsonArrayForAcculynx = json_encode([
+    $jsonArrayForAcculynx = array(
         'firstName'     => $firstName,
         'phoneNumber1'  => $phone,
         'street'        => $address,
         'zip'           => $zip,
         'emailAddress'  => $email,
         'notes'         => $notes
-    ]);
+    );
+    
+
 
     //THIS TOKEN BELOW WILL NEVER EXPIRE AS LONG AS BRAD GOLDSMITH DOES NOT CHANGE HIS FACEBOOK PASSWORD OR DOES NOT LEAVE THE PROLEADS APP AS A DEVELOPER
     //IF HE DOES GO HERE: https://medium.com/@Jenananthan/how-to-create-non-expiry-facebook-page-token-6505c642d0b1 for instructions on how to get a user token and page access token that are linked and never expire.  
