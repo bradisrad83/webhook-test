@@ -13,14 +13,18 @@ $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 error_log(print_r('the above code is proof of concept that we will be linking Squiblib (our APP) to this webook.', true));
 
-error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-$pageName = $input['entry'][0]['changes'][0]['value'];
-error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
+
+$pageName = $input['entry'][0]['changes'][0]['value']['from']['name'];
 error_log(print_r($pageName, true));
-$pageId = $input['entry'][0]['changes'][0]['value']['from'];
-error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
+$pageId = $input['entry'][0]['changes'][0]['value']['from']['id'];
 error_log(print_r($pageId, true));
-error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
+$postId = $input['entry'][0]['changes'][0]['value']['post_id'];
+error_log(print_r($postId, true));
+$message = $input['entry'][0]['changes'][0]['value']['message'];
+error_log(print_r($message, true));
+
+
+
 
 
 ?>
