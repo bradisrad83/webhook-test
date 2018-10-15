@@ -14,10 +14,10 @@ error_log(print_r($input, true));
 error_log(print_r('the above code is proof of concept that we will be linking Squiblib (our APP) to this webook.', true));
 
 error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
-$pageName = $input['entry'][0]['changes'][0]['from']->name;
+$pageName = $input['entry'][0]['changes'][0]['from']['name'];
 error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
 error_log(print_r($pageName, true));
-$pageId = $input['entry'][0]['changes'][0]['from']->id;
+$pageId = $input['entry'][0]['changes'][0]['from']['id'];
 error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
 error_log(print_r($pageId, true));
 error_log(print_r('[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]', true));
