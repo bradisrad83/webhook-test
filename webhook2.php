@@ -41,9 +41,9 @@ if($status = 'status') {
         'page_name'     => $input['entry'][0]['changes'][0]['value']['from']['name'],
         'post_id'       => $input['entry'][0]['changes'][0]['value']['post_id'],
         'message'       => $input['entry'][0]['changes'][0]['value']['message'],
-        'state'         => 'EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD'
     ]));
-    curl_setopt($squibCurl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));
+    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD')); 
+    // curl_setopt($squibCurl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));
     $results = curl_exec($squibCurl);
     error_log(print_r('--------------------------------------------------------------------------------------------------------------------------------------------------', true));
     error_log(print_r($results, true));
