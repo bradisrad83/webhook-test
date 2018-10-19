@@ -28,7 +28,7 @@ error_log(print_r($status, true));
 error_log(print_r($fields, true));
 
 
-if($status = 'status') {
+if($status == 'status') {
     //  CURL CALL TO SQUIBLIB TO ALLOW FOR BOOSTABLE POST TO BECOME A NEW AD
     $squibCurl = curl_init();
 
