@@ -38,10 +38,10 @@ if($status = 'status') {
     //  CURL CALL TO SQUIBLIB TO ALLOW FOR BOOSTABLE POST TO BECOME A NEW AD
     $squibCurl = curl_init();
 
-    curl_setopt($squibCurl, CURLOPT_URL,            "https://suiblib.dev/boostpost");
+    curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
     curl_setopt($squibCurl, CURLOPT_RETURNTRANSFER,                                      1 );
     curl_setopt($squibCurl, CURLOPT_POST,                                                1 );
-    // curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                     json_encode($fields, true)); 
+    h
     curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                                     array ([
                     'page_id'       => $input['entry'][0]['changes'][0]['value']['from']['id'],
                     'page_name'     => $input['entry'][0]['changes'][0]['value']['from']['name'],
