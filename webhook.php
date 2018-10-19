@@ -26,21 +26,15 @@
     $leadgenResults=json_decode(curl_exec($curl));
     
     $leadData = $leadgenResults->field_data;
-    $notes = $leadData[0]->values[0];
-    $email = $leadData[1]->values[0];
-    $name = $leadData[2]->values[0];
-    $phone = $leadData[3]->values[0];
-    $address = $leadData[4]->values[0];
-    $zip = $leadData[5]->values[0];
 
-    $jsonArrayForAcculynx = json_encode([
-        'firstName'     => $name,
-        'phoneNumber1'  => $phone,
-        'street'        => $address,
-        'zip'           => $zip,
-        'emailAddress'  => $email,
-        'notes'         => $notes
-    ]);
+    // $jsonArrayForAcculynx = json_encode([
+    //     'firstName'     => $leadData[2]->values[0],
+    //     'phoneNumber1'  => $leadData[3]->values[0],
+    //     'street'        => $leadData[4]->values[0],
+    //     'zip'           => $leadData[5]->values[0],
+    //     'emailAddress'  => $leadData[1]->values[0],
+    //     'notes'         => $leadData[0]->values[0],
+    // ]);
 
     //  CURL CALL TO ACCULLYNX to Store my lead data into my clients CRM
     $ch = curl_init();
@@ -48,7 +42,15 @@
     curl_setopt($ch, CURLOPT_URL,            "https://api.acculynx.com/api/v1/leads");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
     curl_setopt($ch, CURLOPT_POST,           1 );
-    curl_setopt($ch, CURLOPT_POSTFIELDS,     $jsonArrayForAcculynx); 
+    // curl_setopt($ch, CURLOPT_POSTFIELDS,     $jsonArrayForAcculynx); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS,         json_encode([
+        'firstName'     => $leadgenResults->field_data[2]->values[0],
+        'phoneNumber1'  => $leadgenResults->field_data[3]->values[0],
+        'street'        => $leadgenResults->field_data[4]->values[0],
+        'zip'           => $leadgenResults->field_data[5]->values[0],
+        'emailAddress'  => $leadgenResults->field_data[1]->values[0],
+        'notes'         => $leadgenResults->field_data[0]->values[0],
+    ])); 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer Y2FkNzQ0ZGEtMjBmOC00YzJkLWExMzMtOGU5YTkxNGFhNTZmMGZkYzUyOTYtZWI5Zi00NDk4LWJkYWQtZDJmN2Q4MzEzZjU4', 'Content-Type: application/json'));
     $results=curl_exec($ch);
     error_log(print_r('Below should be a response of 200 and Ill have to check acculynx to see if it went through', true));
