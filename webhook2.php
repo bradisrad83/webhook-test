@@ -47,7 +47,7 @@ if($status = 'status') {
                     'post_id'       => $input['entry'][0]['changes'][0]['value']['post_id'],
                     'message'       => $input['entry'][0]['changes'][0]['value']['message'],
                                                                                                         ]) ); 
-    curl_setopt($squibCurl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));
+    // curl_setopt($squibCurl, CURLOPT_HTTPHEADER,     array('Content-Type: application/json'));
     $results = curl_exec($squibCurl);
     error_log(print_r('--------------------------------------------------------------------------------------------------------------------------------------------------', true));
     error_log(print_r($results, true));
