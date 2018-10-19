@@ -33,7 +33,7 @@ if($status = 'status') {
     $squibCurl = curl_init();
 
     // curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
-    curl_setopt($squibCurl, CURLOPT_URL,               "https://303a6e01.ngrok.io/boostpost");
+    curl_setopt($squibCurl, CURLOPT_URL,               "https://ced60681.ngrok.io/boostpost");
     curl_setopt($squibCurl, CURLOPT_RETURNTRANSFER,                                      1 );
     curl_setopt($squibCurl, CURLOPT_POST,                                                1 );
     curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                     json_encode([
@@ -48,5 +48,5 @@ if($status = 'status') {
     error_log(print_r($results, true));
 
 }
-
+//TOKEN THAT NEVER EXPIRES:    EAAQbS2lfKcQBAE3kiGVZAn7NNmMS4n64XvaKrzO32295jBUapMlMFI9FYYdJTn3g9KiyVJK95fN7eIk2BGIKEl2nsG45MX4CKw2fdA5z9JmPyxmJY1YUZBoYhVaS5kxUfjYPmfRdc8HE6BbS74p2f4ZAjDooGgZD
 ?>
