@@ -26,7 +26,7 @@ $status = $input['entry'][0]['changes'][0]['value']['item'];
 error_log(print_r($status, true));
 
 
-if($status == 'status' || $status == 'photo') {
+if($status == 'status' || $status == 'photo' || $status == 'album' || $status == 'video') {
     //  CURL CALL TO SQUIBLIB TO ALLOW FOR BOOSTABLE POST TO BECOME A NEW AD
     $squibCurl = curl_init();
 
