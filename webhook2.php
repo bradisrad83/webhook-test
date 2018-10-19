@@ -38,7 +38,8 @@ if($status = 'status') {
     //  CURL CALL TO SQUIBLIB TO ALLOW FOR BOOSTABLE POST TO BECOME A NEW AD
     $squibCurl = curl_init();
 
-    curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
+    // curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
+    curl_setopt($squibCurl, CURLOPT_URL,               "https://96f6001e.ngrok.io/boostpost");
     curl_setopt($squibCurl, CURLOPT_RETURNTRANSFER,                                      1 );
     curl_setopt($squibCurl, CURLOPT_POST,                                                1 );
     curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                                     array ([
