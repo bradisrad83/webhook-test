@@ -28,7 +28,7 @@ error_log(print_r($status, true));
 error_log(print_r('--------------------------------------------------------------------------------------------------------', true));
 
 
-if($status == 'status' || $status == 'photo' || $status == 'album' || $status == 'video') {
+if($status == 'status' || $status == 'photo' || $status == 'video') {
     //  CURL CALL TO SQUIBLIB TO ALLOW FOR BOOSTABLE POST TO BECOME A NEW AD
     $squibCurl = curl_init();
 
