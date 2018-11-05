@@ -22,7 +22,7 @@
     curl_setopt($curl, CURLOPT_URL,            "https://graph.facebook.com/v3.1/".$leadgen_id."/");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,   1 );
     curl_setopt($curl, CURLOPT_HTTPGET,          1 );
-    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BACHPqZBUrGdqWZAap24s2ovbNMPelxoOKCzQY0s6dxZB6TMZCb9TBSZBT2giGW7UJzpk19tnx1leeZB00BnO6G4KWBAtTxDWdZAEJHigrQvXvycD12lI7hvpnZA3Rr1qRSX4jVajRdj5hyxzvUxjSjlFZBTLaE2Jr8gZDZD')); 
+    curl_setopt($curl, CURLOPT_HTTPHEADER,     array('Authorization: Bearer EAADz1RkPiV0BALYBt3BhDhG9QD6n5pctydxvczCeCdQjNPZBHKqzs2vgUMFWmLbKUK0mZAkTAuxsXZBfHHZCyb3oYFs9rMtv34ypvXpbQRfdxoma7ZBdCw3iZCWXxnSH6uPaskAC7HCULtKIFAVRigW3VHnFJ5fhgZD')); 
     $leadgenResults=json_decode(curl_exec($curl));
     
     $leadData = $leadgenResults->field_data;
