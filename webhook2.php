@@ -33,7 +33,7 @@ if($status == 'status' || $status == 'photo' || $status == 'video' || $status ==
     $squibCurl = curl_init();
 
     // curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
-    curl_setopt($squibCurl, CURLOPT_URL,               "https://7e87c406.ngrok.io/boostpost");
+    curl_setopt($squibCurl, CURLOPT_URL,               "https://9e3e87f2.ngrok.io/boostpost");
     curl_setopt($squibCurl, CURLOPT_RETURNTRANSFER,                                      1 );
     curl_setopt($squibCurl, CURLOPT_POST,                                                1 );
     curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                     json_encode([
