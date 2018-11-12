@@ -33,7 +33,7 @@ if($status == 'status' || $status == 'photo' || $status == 'video' || $status ==
     $squibCurl = curl_init();
 
     // curl_setopt($squibCurl, CURLOPT_URL,            "https://squiblib.dev/boostpost");
-    curl_setopt($squibCurl, CURLOPT_URL,               "https://40ea498b.ngrok.io/boostpost");
+    curl_setopt($squibCurl, CURLOPT_URL,               "https://ff134915.ngrok.io/boostpost");
     curl_setopt($squibCurl, CURLOPT_RETURNTRANSFER,                                      1 );
     curl_setopt($squibCurl, CURLOPT_POST,                                                1 );
     curl_setopt($squibCurl, CURLOPT_POSTFIELDS,                                     json_encode([
@@ -48,5 +48,4 @@ if($status == 'status' || $status == 'photo' || $status == 'video' || $status ==
     error_log(print_r($results, true));
 
 }
-//TOKEN THAT NEVER EXPIRES:    EAAQbS2lfKcQBAPCxFxaiMIJiIu4z9K4wcTJv5sA0MZC3QDrPXtuT0JJRaF65FTcVig7uH5Olt6BHsiutHOlJa8HZB5PhEngU566YjJCmwcEmyZB9ZCKGUW7hhtSC6DOgmMXLQ3LzH2pdwWyfqUE9nze52K6tVMUZD
 ?>
